@@ -35,6 +35,12 @@
                 id_token: response.credential
             };
 
+            console.log(window.location.hostname.includes('localhost'));
+
+            var url = (window.location.hostname.includes('localhost')) ?
+                'http://localhost:8080/api/auth/google' :
+                'https://restserver-curso-node-begin.herokuapp.com/'
+
             fetch('http://localhost:8080/api/auth/google', {
                     method: 'POST',
                     headers: {
